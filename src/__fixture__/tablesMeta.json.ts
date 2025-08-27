@@ -24,6 +24,28 @@ export const tablesMeta = {
 				type: 'multipleSelects', options: {choices: [{id: 'selcufYWsGwXvoe5K', name: 'A', color: 'blueLight2'}, {id: 'seldJM3V2vfY1MwId', name: 'B', color: 'cyanLight2'}]}, id: 'fldFWelqOO9koF8fM', name: 'Multiple Select',
 			},
 			{
+				type: 'multipleLookupValues',
+				options: {
+					isValid: true,
+					recordLinkFieldId: 'fldKBSikxIGlLOfGJ',
+					fieldIdInLinkedTable: 'fldGiCR2Tqqx1WbCU',
+					result: {type: 'checkbox', options: {icon: 'check', color: 'greenBright'}},
+				},
+				id: 'fldNQ1o1nvKH7NEq9',
+				name: 'multipleLookupValues (checkbox)',
+			},
+			{
+				type: 'multipleLookupValues',
+				options: {
+					isValid: true,
+					recordLinkFieldId: 'fld91mEOBw0aLrdTZ',
+					fieldIdInLinkedTable: 'fld9SOcjaTHWRiqdg',
+					result: {type: 'singleLineText'},
+				},
+				id: 'fldkc2yPlrcamgRa4',
+				name: 'multipleLookupValues (string)',
+			},
+			{
 				type: 'date', options: {dateFormat: {name: 'local', format: 'l'}}, id: 'fldAUPoAJ67TUwaVS', name: 'Date',
 			},
 			{

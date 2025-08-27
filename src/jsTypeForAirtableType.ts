@@ -60,11 +60,13 @@ export const jsTypeForAirtableType = (field: FieldSchema): string | null => {
 					return null;
 				}
 
-				if (innerType.includes('null')) {
-					return innerType;
+				const return_type = innerType.includes('null') ? innerType : `${innerType} | null`;
+
+				if (field.type === 'multipleLookupValues') {
+					return `(${return_type})[]`;
 				}
 
-				return `${innerType} | null`;
+				return return_type;
 			}
 
 			throw new Error(`Invalid ${field.type} field (no options.result): ${field.id}`);

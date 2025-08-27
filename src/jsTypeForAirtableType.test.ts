@@ -40,6 +40,14 @@ describe('jsTypeForAirtableType', () => {
 		expect(jsTypeForAirtableType(multipleSelects)).toBe('string[]');
 	});
 
+	it('converts multiple-lookup values fields to inter-type[]', () => {
+		const multipleLookupCheckboxs = table.fields.find((f) => f.name === 'multipleLookupValues (checkbox)')!;
+		const multipleLookupStrings = table.fields.find((f) => f.name === 'multipleLookupValues (string)')!;
+
+		expect(jsTypeForAirtableType(multipleLookupCheckboxs)).toBe('(boolean | null)[]');
+		expect(jsTypeForAirtableType(multipleLookupStrings)).toBe('(string | null)[]');
+	});
+
 	it('converts numeric fields to number', () => {
 		const number = table.fields.find((f) => f.type === 'number')!;
 		const currency = table.fields.find((f) => f.type === 'currency')!;
