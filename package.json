@@ -1,21 +1,19 @@
 {
   "name": "airtable-ts-codegen",
   "version": "2.1.0",
+  "type": "module",
   "description": "Autogenerate TypeScript definitions for your Airtable base",
   "license": "MIT",
-  "author": "Adam Jones (domdomegg)",
+  "author": "Adam Jones (domdomegg) & Curtis Humphrey PhD (CurtisHumphrey)",
   "repository": {
     "type": "git",
     "url": "https://github.com/domdomegg/airtable-ts-codegen.git"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.d.ts",
   "bin": {
-    "airtable-ts-codegen": "dist/cli.js"
+    "airtable-ts-codegen": "src/cli.ts"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "start": "npm run build && node dist/cli.js",
     "test": "vitest run",
